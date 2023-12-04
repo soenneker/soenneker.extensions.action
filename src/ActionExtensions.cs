@@ -16,6 +16,14 @@ public static class ActionExtensions
     }
 
     /// <summary>
+    /// Equivalent to <code>Task.Run(action).ConfigureAwait(false)</code>
+    /// </summary>
+    public static async ValueTask RunAsync(this System.Action action)
+    {
+        await Task.Run(action);
+    }
+
+    /// <summary>
     /// Creates a new Task, and then creates a new ValueTask from that
     /// </summary>
     public static ValueTask ToValueTask(this System.Action action)
