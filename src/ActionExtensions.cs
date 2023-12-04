@@ -16,11 +16,11 @@ public static class ActionExtensions
     }
 
     /// <summary>
-    /// Equivalent to <code>Task.Run(action).ConfigureAwait(false)</code>
+    /// Equivalent to <code>Task.Run(action)</code>
     /// </summary>
-    public static async ValueTask RunAsync(this System.Action action)
+    public static Task RunAsync(this System.Action action)
     {
-        await Task.Run(action);
+        return Task.Run(action);
     }
 
     /// <summary>
