@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
-using System.Threading.Tasks;
 using Soenneker.Fixtures.Unit;
 using Soenneker.Utils.Test;
 
@@ -9,7 +8,7 @@ namespace Soenneker.Extensions.Action.Tests;
 
 public class Fixture : UnitFixture
 {
-    public override async Task InitializeAsync()
+    public override async System.Threading.Tasks.Task InitializeAsync()
     {
         SetupIoC(Services);
 
