@@ -1,12 +1,13 @@
-﻿using Soenneker.Tests.Unit;
+using Soenneker.Tests.Unit;
 using Xunit;
 
 namespace Soenneker.Extensions.Action.Tests;
 
-public class ActionExtensionTests : UnitTest
+public class ActionExtensionsTests : UnitTest
 {
     [Fact]
     public void Default()
     {
+
     }
 }
