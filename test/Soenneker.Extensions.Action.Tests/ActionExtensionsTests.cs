@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Soenneker.Tests.Unit;
 using Xunit;
 
@@ -8,6 +9,6 @@ public class ActionExtensionsTests : UnitTest
     [Fact]
     public void Default()
     {
-
+        true.Should().BeTrue();
     }
 }
