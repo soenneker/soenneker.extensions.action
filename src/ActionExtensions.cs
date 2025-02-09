@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Soenneker.Extensions.Action;
@@ -18,9 +19,9 @@ public static class ActionExtensions
     /// <summary>
     /// Equivalent to <code>Task.Run(action)</code>
     /// </summary>
-    public static Task RunAsync(this System.Action action)
+    public static Task RunAsync(this System.Action action, CancellationToken cancellationToken = default)
     {
-        return Task.Run(action);
+        return Task.Run(action, cancellationToken);
     }
 
     /// <summary>
