@@ -1,12 +1,11 @@
 using AwesomeAssertions;
 using Soenneker.Tests.Unit;
-using Xunit;
 
 namespace Soenneker.Extensions.Action.Tests;
 
 public class ActionExtensionsTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
         true.Should().BeTrue();
