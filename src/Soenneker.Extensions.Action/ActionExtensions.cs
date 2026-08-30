@@ -27,12 +27,19 @@ public static class ActionExtensions
     }
 
     /// <summary>
-    /// Creates a new Task, and then creates a new ValueTask from that
+    /// Invokes the action synchronously and returns a completed value task, or a faulted value task when the action throws.
     /// </summary>
-    /// <returns>Creates a new Task, and then creates a new ValueTask from that.</returns>
+    /// <returns>A completed or faulted value task representing the invocation.</returns>
     public static ValueTask ToValueTask(this System.Action action)
     {
-        var task = action.ToTask();
-        return new ValueTask(task);
+        try
+        {
+            action();
+            return ValueTask.CompletedTask;
+        }
+        catch (System.Exception exception)
+        {
+            return ValueTask.FromException(exception);
+        }
     }
 }

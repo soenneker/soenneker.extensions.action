@@ -6,8 +6,14 @@ namespace Soenneker.Extensions.Action.Tests;
 public class ActionExtensionsTests : UnitTest
 {
     [Test]
-    public void Default()
+    public async System.Threading.Tasks.Task ToValueTask_InvokesActionAndCompletes()
     {
-        true.Should().BeTrue();
+        var invoked = false;
+        System.Action action = () => invoked = true;
+
+        System.Threading.Tasks.ValueTask result = action.ToValueTask();
+
+        await result;
+        invoked.Should().BeTrue();
     }
 }
