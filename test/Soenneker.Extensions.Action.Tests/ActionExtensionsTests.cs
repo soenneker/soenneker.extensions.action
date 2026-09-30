@@ -6,7 +6,7 @@ namespace Soenneker.Extensions.Action.Tests;
 public class ActionExtensionsTests : UnitTest
 {
     [Test]
-    public async System.Threading.Tasks.Task ToValueTask_InvokesActionAndCompletes()
+    public async System.Threading.Tasks.ValueTask ToValueTask_InvokesActionAndCompletes()
     {
         var invoked = false;
         System.Action action = () => invoked = true;
